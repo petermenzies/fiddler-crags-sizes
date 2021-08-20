@@ -1,0 +1,17 @@
+---
+title: "Fiddler crabs"
+author: "Peter Menzies"
+date: "8/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+```
+
+```{r}
+crabs <- read_csv(here("data", "HTL-MAR-FiddlerCrabBodySize (1).csv"))
+```
+
