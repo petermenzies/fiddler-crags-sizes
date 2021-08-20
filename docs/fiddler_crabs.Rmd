@@ -28,7 +28,13 @@ crab_plot <- ggplot(data = crabs, aes(x = Latitude, y = carapace_width)) +
        caption = "Do fiddler crabs follow Bergman's rule?")
 
 crab_plot
+```
 
+```{r, alt.fig = "This scatterplot shows crab carapace width as a funtion of mean annual water temperature, displaying a negative linear correlation"}
+water_temp_carapace <- ggplot(crabs, aes(x = MATW, y = carapace_width)) +
+  geom_point(aes(color = MATW)) +
+  labs(x = "Mean annual water temperature", y = "Carapace width (mm)", title = "Crab cararpce width vs mean annual water temperature", caption = "A negative linear correlation between water temperature and carapace width of fiddler crabs on the east coast")
 
+water_temp_carapace
 ```
 
