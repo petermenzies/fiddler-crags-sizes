@@ -15,7 +15,10 @@ library(here)
 crabs <- read_csv(here("data", "HTL-MAR-FiddlerCrabBodySize (1).csv"))
 ```
 
-```{r, fig.alt = "Male fiddler crabs carapace width increases over 12 degrees of latitiude, with the data following a gradual positive linear correlation.", fig.show = "show", echo = FALSE}
+## How does carapace widht change with latitude?
+#### The following figure shows fiddler crab carapace width over a range of latitiudes along the east coast. As latitiude increases, we see a gradual increase in carapace width.
+
+```{r, fig.alt = " A scatterplot that shows how male fiddler crabs carapace widths increase over 12 degrees of latitiude. The data follows a gradual positive linear correlation.", fig.show = "show", echo = FALSE}
 #Create a plot of fiddler crab carapace widths observed at the different latitudes
 #Finalize your figure, include a title and updated axis labels, add alt-text, and add a figure caption (you #can either do this in the code chunk options or just in plain markdown text below your figure). Update code chunk options so that only your finalized graph and figure caption show up in your knitted report (i.e., no code should show up, or you can use code folding)
 #Push your updates
@@ -30,10 +33,16 @@ crab_plot <- ggplot(data = crabs, aes(x = Latitude, y = carapace_width)) +
 crab_plot
 ```
 
-```{r, alt.fig = "This scatterplot shows crab carapace width as a funtion of mean annual water temperature, displaying a negative linear correlation"}
+## How does carapace width change with water temperature?
+#### The following figure shows how fiddler crab carapace width changes with mean annual water temperature along the east coast. As water temperature increases, carapace length decreases.
+
+```{r, alt.fig = "This scatterplot shows crab carapace width as a funtion of mean annual water temperature, displaying a negative linear correlation", echo = FALSE, fig.show = "show"}
 water_temp_carapace <- ggplot(crabs, aes(x = MATW, y = carapace_width)) +
   geom_point(aes(color = MATW)) +
-  labs(x = "Mean annual water temperature", y = "Carapace width (mm)", title = "Crab cararpce width vs mean annual water temperature", caption = "A negative linear correlation between water temperature and carapace width of fiddler crabs on the east coast")
+  labs(x = "Mean annual water temperature",
+       y = "Carapace width (mm)",
+       title = "Crab carapace width vs mean annual water temperature",
+       caption = "A negative linear correlation between water temperature and carapace width of fiddler crabs on the east coast")
 
 water_temp_carapace
 ```
